@@ -1,0 +1,3 @@
+[1m[34m[*][0m Spooling to file /home/kali/Desktop/metasploit-bruteforce-results.txt...
+[4mmsf[0m auxiliary([1m[31mscanner/smb/smb_login[0m) [0m> spool off
+[0m
