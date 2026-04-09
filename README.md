@@ -29,13 +29,21 @@ cd ~/Desktop
 nano passwords.txt
 
 Passwords included in the wordlist:
+
 • password
+
 • 123456
+
 • admin
+
 • welcome
+
 • Password123
+
 • letmein
+
 • qwerty
+
 • administrator
 
 ## Step 2 — Launch Metasploit Framework
@@ -74,6 +82,7 @@ Metasploit attempted all 8 passwords from the wordlist against the Administrator
 
 ## Detection — Defender Side (Windows Event Viewer)
 Filtered Windows Security logs for Event ID 4625 (Failed Logon).
+
 **Result: 10 failed login attempts detected.**
 | Event ID | Event Name | Meaning | SOC Significance |
 |----------|------------|---------|-----------------|
