@@ -126,17 +126,7 @@ index=wineventlog EventCode=4625
 | Date/Time | 2026-03-15 19:14 | Attack timestamp |
 | Failure Count | 10 failed attempts | Exceeds normal threshold of 3-5 |
 
-## Security Observations
-## 1. SMB Port 445 is a High-Value Attack Target
-This is the SAME port discovered open in Lab 01 Nmap scan. An attacker's workflow is: 1) Reconnaissance (Nmap — Lab 01) → 2) Attack (Brute Force via SMB — Lab 02). This demonstrates exactly how the Cyber Kill Chain works in real attacks.
-## 2. Administrator Account Should Be Renamed or Disabled
-The attacker immediately targeted 'Administrator' because it is the default Windows admin account. In production environments this account should be renamed or disabled and replaced with a named admin account. This is a basic security hardening step.
-## 3. Account Lockout Policy Was Not Configured
-The attack was able to attempt all 8 passwords without the account being locked. In a hardened system, Account Lockout Policy should be set to lock the account after 3-5 failed attempts. This would have stopped the attack at attempt 4.
-## 4. No MFA on SMB Authentication
-Multi-Factor Authentication would have completely prevented this attack even if the correct password was guessed. Modern enterprise environments enforce MFA for all remote authentication.
-## 5. Attack Was Fully Visible in Logs
-The positive finding here is that Windows Event Logging captured every single failed attempt with full details including source IP, timestamp, account name, and logon type. A SIEM monitoring these logs would have triggered an alert within seconds.
+
 
 ## What I Learned
 • How brute force attacks work in practice — automated password guessing via Metasploit
