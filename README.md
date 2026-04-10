@@ -7,7 +7,18 @@ Detection & Analysis Using Windows Event Logs
 ## About This Lab
 Lab 02 builds on the network reconnaissance performed in Lab 01 by simulating a real-world brute force attack against a Windows 10 target. Using Metasploit's smb_login module from Kali Linux, the attack attempts multiple passwords against the Administrator account via SMB port 445 — the same port discovered in Lab 01. The Windows 10 VM generates failed login events (Event ID 4625) which are then analyzed as a SOC analyst would.
 
-
+## Lab Environment
+| Component | Details |
+|-----------|---------|
+| Hypervisor | VMware Workstation Pro 25H2 |
+| Attacker Machine | Kali Linux 2025.4 (amd64) |
+| Defender / Target | Windows 10 x64 |
+| Network Type | VMware LAN Segment — Isolated (testpractice) |
+| Attacker IP | 192.168.20.11 (Static) |
+| Target IP | 192.168.20.10 (Static) |
+| Attack Tool | Metasploit Framework v6.4 — smb_login |
+| Target Port | 445/TCP — SMB |
+| Detection Method | Windows Event Viewer — Event ID 4625 |
 
 ## Attack Simulation — Attacker Side (Kali Linux)
 ## Step 1 — Create Password Wordlist
