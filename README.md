@@ -112,10 +112,7 @@ In a real SOC environment, a SIEM rule would automatically detect this pattern:
 
 Splunk query to detect this attack:
 
-index=wineventlog EventCode=4625
-| stats count by src_ip, user
-| where count > 5
-| sort -count
+index=wineventlog EventCode=4625| stats count by src_ip, user| where count > 5| sort -count
 
 ## Indicators of Compromise (IOCs)
 | IOC Type | Value | Significance |
