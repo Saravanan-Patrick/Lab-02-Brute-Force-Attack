@@ -109,6 +109,7 @@ After filtering Windows Security logs for Event ID 4625, the following was obser
 In a real SOC environment, a SIEM rule would automatically detect this pattern:
 
 ## SIEM Alert Rule: IF (Event ID 4625 count > 5 from same Source IP within 60 seconds) THEN trigger BRUTE FORCE ALERT → assign to Tier 1 analyst for investigation
+
 Splunk query to detect this attack:
 index=wineventlog EventCode=4625
 | stats count by src_ip, user
